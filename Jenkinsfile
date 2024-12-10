@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        GIT_REPO = 'https://github.com/username/repo.git' 
+        GIT_REPO = 'https://github.com/mostafa-7ussein/flask-weather.git' 
         GIT_CREDENTIALS_ID = 'git-credentials-id'
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials-id' 
         IMAGE_NAME = 'your-dockerhub-username/your-image-name'
