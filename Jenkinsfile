@@ -5,7 +5,7 @@ pipeline {
         GIT_CREDENTIALS_ID = 'git-credentials-id'
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials-id' 
         IMAGE_NAME = 'your-dockerhub-username/your-image-name'
-        DOCKER_TAG = env.BUILD_NUMBER
+        DOCKER_TAG = 'env.BUILD_NUMBER'
     }
     stages {
         stage('Checkout') {
