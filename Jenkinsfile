@@ -42,7 +42,7 @@ pipeline {
                 ansiblePlaybook 
                 credentialsId: 'ansible-credentials',
                 inventory: 'inventory_file',
-                playbook: 'deploy.yml'
+                playbook: 'deploy.yaml'
             }
         }
     }
