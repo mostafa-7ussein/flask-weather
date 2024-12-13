@@ -36,6 +36,15 @@ pipeline {
                 }
             }
         }
+    
+            stage('Run Ansible Playbook') {
+            steps {
+                ansiblePlaybook 
+                credentialsId: 'ansible-credentials',
+                inventory: 'inventory_file',
+                playbook: 'deploy.yml'
+            }
+        }
     }
     post {
           success {
