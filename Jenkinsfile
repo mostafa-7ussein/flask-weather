@@ -47,6 +47,10 @@ pipeline {
             script {
                 slackSend(channel: '#flask-weather', message: "Pipeline ${env.JOB_NAME} - Build Number: ${env.BUILD_NUMBER} failed!")
             }
-        }      
+        }    
+        always {
+            echo "Pipeline completed."
+            sh 'docker system prune -f'
+        }  
     }
 }
