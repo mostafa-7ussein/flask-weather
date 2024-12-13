@@ -5,7 +5,7 @@ pipeline {
         GIT_CREDENTIALS_ID = 'github'
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub' 
         IMAGE_NAME = 'mostafahu/flask-weather-app'
-        DOCKER_TAG = 'env.BUILD_NUMBER'
+        DOCKER_TAG = "${env.BUILD_NUMBER}"  
     }
     stages {
         stage('Checkout') {
@@ -38,8 +38,15 @@ pipeline {
         }
     }
     post {
-        always {
-            echo "Pipeline completed."
+          success {
+            script {
+                slackSend(channel: '#flask-weather', color: '#00FF00', message: "Succeeded  ${env.JOB_NAME} - Build Number: ${env.BUILD_NUMBER} succeeded!")
+            }
         }
+        failure {
+            script {
+                slackSend(channel: '#flask-weather', message: "Pipeline ${env.JOB_NAME} - Build Number: ${env.BUILD_NUMBER} failed!")
+            }
+        }      
     }
 }
