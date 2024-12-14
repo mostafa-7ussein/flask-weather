@@ -109,12 +109,17 @@ Application Structure 📁
     Jenkinsfile: Jenkins pipeline configuration for automated deployment.
     playbook.yaml: Ansible playbook for deploying the app on remote servers.
 
-Screenshots 📸
-Docker Hub 🌐
+## Screenshots 📸
 
-Jenkins Pipeline 🔄
+### Docker Hub 🌐
+![Docker Hub](assets/images/docker.png)
 
-Slack Notifications 📲
+### Jenkins Pipeline 🔄
+![Jenkins Pipeline](assets/images/jenkins.png)
+
+### Slack Notifications 📲
+![Slack Notifications](assets/images/slack.png)
+
 
 Contributing 🤝
 
