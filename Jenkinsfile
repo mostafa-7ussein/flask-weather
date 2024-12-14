@@ -40,7 +40,7 @@ pipeline {
                stage('Run Ansible Playbook') {
             steps {
                 sh '''
-                ansible-playbook -i hosts playbook.yaml --extra-vars "docker_image=${IMAGE_NAME}::${DOCKER_TAG}"
+                ansible-playbook -i hosts playbook.yaml --extra-vars "docker_image=${IMAGE_NAME}:${DOCKER_TAG}"
                 '''
             }
         }
