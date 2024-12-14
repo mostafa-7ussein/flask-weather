@@ -1,0 +1,17 @@
+
+
+flask-weather01 ansible_host=10.174.5.26
+flask-weather02 ansible_host=10.174.5.99
+[my_hosts]
+
+flask-weather01
+flask-weather02
+[my_hosts:vars]
+
+ansible_connect=ssh
+
+ansible_user=ansibleadmin
+
+ansible_private_key_file=~/.ssh/id_rsa
+
+host_key_checking=false

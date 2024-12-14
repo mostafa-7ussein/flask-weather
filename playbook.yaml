@@ -1,0 +1,59 @@
+- name: Install Docker, pull image, and run container
+
+  hosts: my_hosts
+
+  become: yes
+  tasks:
+    - name: Install required packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - software-properties-common
+
+    - name: Add Docker GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Install Docker
+      apt:
+        name: docker-ce
+        state: present
+        update_cache: true
+
+    - name: Start and enable Docker service
+      systemd:
+        name: docker
+        state: started
+        enabled: true
+    - name: Pull Docker image from DockerHub
+      community.docker.docker_image:
+        name:  "{{ docker_image }}"
+        source: pull
+
+
+    - name: Ensure Docker container is deleted if it exists
+      community.docker.docker_container:
+        name: flask-weather-app-container
+        state: absent
+      ignore_errors: true
+
+
+    # 3. Run Docker Container
+    - name: Run Docker container
+      community.docker.docker_container:
+        name: flask-weather-app-container
+        image:  "{{ docker_image }}"
+        state: started
+        ports:
+          - "5000:5000"
+

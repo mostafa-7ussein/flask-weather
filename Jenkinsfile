@@ -37,15 +37,13 @@ pipeline {
         //     }
         // }
     
-              stage('Run Ansible Playbook') {
-                    steps {
-                         ansiblePlaybook(
-                              credentialsId: 'ansible-credentials',
-                              inventory: 'inventory_file',
-                             playbook: 'deploy.yaml'
-        )
-    }
-}
+               stage('Run Ansible Playbook') {
+            steps {
+                sh '''
+                ansible-playbook -i hosts playbook.yaml --extra-vars "docker_image=${IMAGE_NAME}::${DOCKER_TAG}"
+                '''
+            }
+        }
     }
     post {
           success {
