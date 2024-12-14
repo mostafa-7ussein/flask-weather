@@ -10,7 +10,7 @@ flask-weather02
 
 ansible_connect=ssh
 
-ansible_user=ansibleadmin
+ansible_user=ubuntu
 
 ansible_private_key_file=~/.ssh/id_rsa
 
