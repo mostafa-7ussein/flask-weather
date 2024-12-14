@@ -37,7 +37,7 @@
         enabled: true
     - name: Pull Docker image from DockerHub
       community.docker.docker_image:
-        name:  mostafahu/flask-weather-app:18
+        name:  "{{ docker_image }}"
         source: pull
 
 
@@ -52,7 +52,7 @@
     - name: Run Docker container
       community.docker.docker_container:
         name: flask-weather-app-container
-        image:  mostafahu/flask-weather-app:18
+        image:  "{{ docker_image }}"
         state: started
         ports:
           - "5000:5000"
