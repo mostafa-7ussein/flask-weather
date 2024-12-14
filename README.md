@@ -26,19 +26,19 @@ Clone the repository to your local machine:
 git clone https://github.com/mostafa-7ussein/flask-weather.git
 cd flask-weather
 
-2. Install Dependencies
+### 2. Install Dependencies
 
 Create a Python virtual environment and install the dependencies listed in requirements.txt:
 
 pip install -r requirements.txt
 
-3. Configure OpenWeather API Key 🌐
+### 3. Configure OpenWeather API Key 🌐
 
 In app.py, replace the placeholder 'your_openweathermap_api_key' with your actual OpenWeather API key. You can obtain your API key from OpenWeather.
 
 API_KEY = 'your_openweathermap_api_key'
 
-4. Running the Application 🏃‍♂️
+### 4. Running the Application 🏃‍♂️
 
 Run the Flask app locally with:
 
@@ -49,6 +49,7 @@ The application will be accessible at http://localhost:5000.
 Docker Deployment (Optional) 🐳
 
 If you prefer running the app in a Docker container:
+
 1. Build the Docker Image
 
 To build the Docker image, run:
