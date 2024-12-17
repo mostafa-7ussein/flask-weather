@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # Database file
 DB_FILE = 'weather_data.db'
-API_KEY = '2e146fa57d1cdd73e43ba40518ab4081'
+API_KEY = 'affadc157a00e28ac086b990e1248535'
 
 # Ensure database exists
 def init_db():
