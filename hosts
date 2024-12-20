@@ -1,7 +1,7 @@
 
 
-flask-weather01 ansible_host=10.174.5.45
-flask-weather03 ansible_host=10.174.5.41
+flask-weather01 ansible_host=10.174.5.136
+flask-weather02 ansible_host=10.174.5.174
 [my_hosts]
 
 flask-weather01
