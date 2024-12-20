@@ -1,8 +1,7 @@
 - name: Install Docker, pull image, and run container
-
   hosts: my_hosts
-
   become: yes
+  gather_facts: true
   tasks:
     - name: Install required packages
       apt:
