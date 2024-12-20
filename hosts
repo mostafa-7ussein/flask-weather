@@ -5,7 +5,7 @@ flask-weather02 ansible_host=10.174.5.174
 [my_hosts]
 
 flask-weather01
-flask-weather03
+flask-weather02
 [my_hosts:vars]
 
 ansible_connect=ssh
