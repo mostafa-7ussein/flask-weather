@@ -120,6 +120,9 @@ Application Structure 📁
 ### Slack Notifications 📲
 ![Slack Notifications](assets/images/slack.png)
 
+### Digram Project 🔄
+![Digram Pipline](assets/images/Animation.gif)
+
 
 Contributing 🤝
 
